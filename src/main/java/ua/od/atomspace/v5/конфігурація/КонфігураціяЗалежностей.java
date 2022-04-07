@@ -1,9 +1,7 @@
 package ua.od.atomspace.v5.конфігурація;
 
 import org.reflections.Reflections;
-import ua.od.atomspace.v5.сервіс.*;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,7 +19,7 @@ public class КонфігураціяЗалежностей {
         return картаЗалежностей.computeIfAbsent(type, clazz -> {
             Set<Class<? extends T>> імплементації = reflections.getSubTypesOf(type);
             if (імплементації.size() != 1) {
-                throw new RuntimeException("Кількість анотацій не дорівнює 1");
+                throw new RuntimeException("Кількість імплементацій не дорівнює 1");
             }
             return імплементації.stream()
                     .findFirst()
@@ -29,19 +27,19 @@ public class КонфігураціяЗалежностей {
         });
     }
 
-    public static class Одинак {
-        private static КонфігураціяЗалежностей конфігураціяЗалежностей;
-
-        public static КонфігураціяЗалежностей взятиЕкзкмпляр() {
-            if (конфігураціяЗалежностей != null) {
-                return конфігураціяЗалежностей;
-            }
-            конфігураціяЗалежностей = new КонфігураціяЗалежностей("ua.od.atomspace.v5.сервіс", new HashMap<>(Map.of(
-                    Митниця.class, МитницяОдеси.class,
-                    МіграційнаСлужба.class, МіграційнаСлужбаУкраїни.class,
-                    ЧергаНаКордоні.class, ЧергаНаКордоніМолдови.class
-            )));
-            return конфігураціяЗалежностей;
-        }
-    }
+//    public static class Одинак {
+//        private static КонфігураціяЗалежностей конфігураціяЗалежностей;
+//
+//        public static КонфігураціяЗалежностей взятиЕкзкмпляр() {
+//            if (конфігураціяЗалежностей != null) {
+//                return конфігураціяЗалежностей;
+//            }
+//            конфігураціяЗалежностей = new КонфігураціяЗалежностей(new HashMap<>(Map.of(
+//                    Митниця.class, МитницяОдеси.class,
+//                    МіграційнаСлужба.class, МіграційнаСлужбаУкраїни.class,
+//                    ЧергаНаКордоні.class, ЧергаНаКордоніМолдови.class
+//            )));
+//            return конфігураціяЗалежностей;
+//        }
+//    }
 }

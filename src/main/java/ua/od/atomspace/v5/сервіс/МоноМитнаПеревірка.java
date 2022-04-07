@@ -1,6 +1,7 @@
 package ua.od.atomspace.v5.сервіс;
 
 import ua.od.atomspace.v5.модель.Людина;
+import ua.od.atomspace.v5.сервіс.МитнаПеревірка;
 
 import java.util.Random;
 

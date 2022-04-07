@@ -1,9 +1,11 @@
-package ua.od.atomspace.v4_2.конфігурація.налаштовувач;
+package ua.od.atomspace.v5.конфігурація.налаштовувач;
 
 import lombok.SneakyThrows;
-import ua.od.atomspace.v4_2.конфігурація.анотація.ЗчитатиПараметр;
+import ua.od.atomspace.v5.конфігурація.анотація.ЗчитатиПараметр;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

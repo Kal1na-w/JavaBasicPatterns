@@ -3,9 +3,7 @@ package ua.od.atomspace.v5;
 import ua.od.atomspace.v5.конфігурація.ФабрикаЕкземплярів;
 import ua.od.atomspace.v5.модель.ВідповідьМитніці;
 import ua.od.atomspace.v5.модель.Людина;
-import ua.od.atomspace.v5.сервіс.Митниця;
-import ua.od.atomspace.v5.сервіс.МіграційнаСлужба;
-import ua.od.atomspace.v5.сервіс.ЧергаНаКордоні;
+import ua.od.atomspace.v5.сервіс.*;
 
 public class МитнийДодаток {
     public static void main(String[] args) {

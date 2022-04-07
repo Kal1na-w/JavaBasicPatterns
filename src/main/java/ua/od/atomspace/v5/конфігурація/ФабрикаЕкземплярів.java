@@ -10,20 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ФабрикаЕкземплярів {
+
     private final КонфігураціяЗалежностей конфігураціяЗалежностей;
+    private final НалаштовувачЕкземплярів налаштовувачЕкземплярів;
+
 
     private ФабрикаЕкземплярів() {
-        this.конфігураціяЗалежностей = new КонфігураціяЗалежностей(
-                "ua.od.atomspace.v5.сервіс",
-                new HashMap<>(
-                        Map.of(
-                                Митниця.class, МитницяОдеси.class,
-                                МіграційнаСлужба.class, МіграційнаСлужбаУкраїни.class,
-                                ЧергаНаКордоні.class, ЧергаНаКордоніМолдови.class,
-                                МитнаПеревірка.class, МоноМитнаПеревірка.class
-                        )
-                )
-        );
+        this.налаштовувачЕкземплярів = new НалаштовувачЕкземплярів("ua.od.atomspace.v5");
+        this.конфігураціяЗалежностей = new КонфігураціяЗалежностей("ua.od.atomspace.v5", new HashMap<>(Map.of(
+                Митниця.class, МитницяОдеси.class,
+                МіграційнаСлужба.class, МіграційнаСлужбаУкраїни.class,
+                ЧергаНаКордоні.class, ЧергаНаКордоніМолдови.class,
+                МитнаПеревірка.class, ПаляничнаМитнаПеревірка.class
+        )));
     }
 
     @SneakyThrows
@@ -32,11 +31,11 @@ public class ФабрикаЕкземплярів {
         if (type.isInterface()) {
             реалізація = конфігураціяЗалежностей.взятиЗалежність(type);
         }
-        T t = взятиОдинака(реалізація);
+        T одинак = взятиОдинака(реалізація);
 
+        налаштовувачЕкземплярів.зробитиВсіНалаштовування(одинак);
 
-
-        return t;
+        return одинак;
     }
 
     private <T> T взятиОдинака(Class<T> type) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {

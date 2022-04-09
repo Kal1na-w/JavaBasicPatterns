@@ -1,11 +1,11 @@
-package ua.od.atomspace.v4_2.конфігурація.анотація;
+package ua.od.atomspace.v6.конфігурація.анотація;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
 public @interface ЗчитатиПараметр {
 }

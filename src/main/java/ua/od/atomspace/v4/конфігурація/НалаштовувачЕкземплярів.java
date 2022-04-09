@@ -1,8 +1,7 @@
-package ua.od.atomspace.v4_2.конфігурація;
+package ua.od.atomspace.v4.конфігурація;
 
-import lombok.SneakyThrows;
 import org.reflections.Reflections;
-import ua.od.atomspace.v4_2.конфігурація.налаштовувач.Налаштовувач;
+import ua.od.atomspace.v4.конфігурація.налаштовувач.Налаштовувач;
 
 import java.lang.reflect.InvocationTargetException;
 

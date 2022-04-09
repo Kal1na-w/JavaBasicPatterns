@@ -1,7 +1,7 @@
-package ua.od.atomspace.v4_2.конфігурація.налаштовувач;
+package ua.od.atomspace.v4.конфігурація.налаштовувач;
 
 import lombok.SneakyThrows;
-import ua.od.atomspace.v4_2.конфігурація.анотація.ЗчитатиПараметр;
+import ua.od.atomspace.v4.конфігурація.анотація.ЗчитатиПараметр;
 
 import java.io.*;
 import java.util.Arrays;

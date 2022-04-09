@@ -1,4 +1,4 @@
-package ua.od.atomspace.v4_2.модель;
+package ua.od.atomspace.v6.модель;
 
 import lombok.Value;
 
